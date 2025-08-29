@@ -29,18 +29,18 @@ for (let i = 0; i < calls.length; i++) {
 
     const card = this.closest('.rounded-xl');
 
-    const titleName = card.querySelector('h3').innerText;
-    const num = card.querySelector('h2').innerText;
+    const serviceName = card.querySelector('h3').innerText;
+    const serviceNumber = card.querySelector('h2').innerText;
     const subTitle = card.querySelector('p').innerText;
 
-    alert("Calling " + subTitle + " " + num);
+    alert("Calling " + subTitle + " " + serviceNumber);
 
     const historyItem = document.createElement('div');
     historyItem.innerHTML = `
           <div class="flex bg-[#FAFAFA] justify-between items-center mx-[5%] p-4 mb-4">
             <div>
-              <h2 class="inter-font font-semibold text-[18px] max-w-[250px]">${titleName}</h2>
-              <p class="hind-madurai-font text-[18px] text-[#5C5C5C]">${num}</p>
+              <h2 class="inter-font font-semibold text-[18px] max-w-[250px]">${serviceName}</h2>
+              <p class="hind-madurai-font text-[18px] text-[#5C5C5C]">${serviceNumber}</p>
             </div>
             <p class="hind-madurai-font text-[20px]">${new Date().toLocaleTimeString()}</p>
           </div>
