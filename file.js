@@ -48,3 +48,33 @@ for (let i = 0; i < calls.length; i++) {
     historySection.appendChild(historyItem);
   });
 }
+
+//Clear Button Click
+
+document.getElementById('clr-btn').addEventListener('click', function(){
+  const HistorySection = document.getElementById('history-section');
+  HistorySection.innerText = "";
+})
+
+//Copy Button Click
+
+const copies = document.getElementsByClassName('copy');
+const copyCount = document.getElementById('copy-count');
+
+for (let i=0; i<copies.length; i++) {
+  copies[i].addEventListener('click', function() {
+    let totalCopy = parseInt(copyCount.innerText);
+
+    totalCopy++;
+    copyCount.innerText = totalCopy;
+    
+    const card = this.closest('.rounded-xl');
+
+    const numberToCopy = card.querySelector('h2').innerText; 
+    navigator.clipboard.writeText(numberToCopy).then(() => {
+        alert("Number copied to clipboard: " + numberToCopy);
+      }).catch(err => {
+        alert("Failed to copy the number.");
+      });
+  })
+}
